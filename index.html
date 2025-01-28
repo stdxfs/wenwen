@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>给珏文的新春祝福</title>
+    <title>给文文的新春祝福</title>
     <style>
         /* 基础样式 */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             text-align: center;
-            padding: 20px;
             margin: 0;
+            padding: 0;
             background: linear-gradient(135deg, #f6d365, #fda085);
             animation: gradientBG 10s ease infinite;
             background-size: 200% 200%;
-            overflow: hidden;
         }
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -27,14 +26,15 @@
             font-size: 2.5rem;
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 2s ease-in-out;
+            margin-top: 50px;
         }
 
         p {
             font-size: 1.2rem;
             line-height: 1.6;
             color: #444;
-            animation: slideUp 1.5s ease-in-out;
+            margin: 20px auto;
+            max-width: 90%;
         }
 
         .heart {
@@ -55,149 +55,87 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .blessing {
-            background-color: rgba(255, 255, 255, 0.9);
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            margin-top: 20px;
-            max-width: 90%;
-            animation: fadeIn 2.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .footer {
             margin-top: 40px;
             font-size: 1rem;
             color: #fff;
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        .countdown {
-            font-size: 1rem;
-            color: #fff;
-            margin-top: 20px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .memories {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #fff;
-            animation: fadeIn 2.5s ease-in-out;
-        }
-
-        /* 内容切换容器 */
-        .content-container {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 300%;
-        }
-        .content-page {
-            width: 100%;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* 导航点 */
-        .nav-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .nav-dot {
-            width: 10px;
-            height: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .nav-dot.active {
-            background-color: #fff;
         }
 
         /* 动画效果 */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
+
+        /* 手机端适配 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .snake-image {
+                width: 120px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="content-container" id="contentContainer">
-        <!-- 第一页 -->
-        <div class="content-page">
-            <h1>❤️ 给珏文的新春祝福 ❤️</h1>
-            <img src="https://via.placeholder.com/150" alt="我们的合照" class="snake-image">
-            <div class="blessing">
-                <p>亲爱的珏文：</p>
-                <p>新春快乐！🎉 这是我们分别后的第一个春节，虽然我们相隔千里，但我的心始终与你同在。</p>
-            </div>
-        </div>
-
-        <!-- 第二页 -->
-        <div class="content-page">
-            <div class="blessing">
-                <p>从去年4月12日分别的那天起，我每天都在想你。嘉峪关的风沙再大，也吹不散我对你的思念。</p>
-                <p>愿你在新的一年里：</p>
-                <p>🌟 工作顺利，事业蒸蒸日上！</p>
-                <p>💖 身体健康，笑容常伴！</p>
-                <p>💰 财源广进，生活美满！</p>
-                <p>🍀 心想事成，万事如意！</p>
-            </div>
-        </div>
-
-        <!-- 第三页 -->
-        <div class="content-page">
-            <div class="blessing">
-                <p>我知道你在工作中遇到了一些挑战，国企的环境可能让你感到疲惫和无奈。但请记住，你的努力和坚持一定会带来回报。你是一个温柔又坚韧的人，我相信你一定能克服这些困难，找到属于自己的节奏。不要给自己太大压力，慢慢来，我会一直支持你！</p>
-                <p>我们还一起度过了那么多美好的时光：在青岛的小麦岛看日落，在日照的海边吃凌晨的火锅，在北京的冬天里依偎取暖。还有那只我们一起照顾的猫咪，现在它胖乎乎的，毛色也比以前更漂亮了，真为你开心！</p>
-            </div>
-        </div>
-
-        <!-- 第四页 -->
-        <div class="content-page">
-            <div class="blessing">
-                <p>未来的日子里，我希望我们能一起克服距离的阻碍，实现更多美好的梦想。无论是狗猫双全的小屋，还是无忧无虑的生活，我都会陪你一起努力。</p>
-                <p class="heart">❤️ 永远爱你的 辛福朔 ❤️</p>
-            </div>
-            <div class="countdown">
-                <p>我们已经分别了 <span id="days"></span> 天。</p>
-            </div>
-            <div class="memories">
-                <p>我们的故事开始于2022年11月，至今已经走过了 <span id="togetherDays"></span> 天。</p>
-            </div>
-            <div class="footer">
-                <p>祝你蛇年快乐，心想事成！</p>
-                <p>🎉 新年快乐 🎉</p>
-            </div>
-        </div>
+    <div class="section active">
+        <h1>❤️ 给珏文的新春祝福 ❤️</h1>
+        <img src="http://cdnjson.com/image/y0FE2" alt="我们的合照" class="snake-image">
+        <p>亲爱的珏文：</p>
+        <p>新春快乐！🎉 这是我们分别后的第一个春节，虽然我们相隔千里，但我的心始终与你同在。</p>
     </div>
 
-    <!-- 导航点 -->
-    <div class="nav-dots" id="navDots">
-        <div class="nav-dot active" data-index="0"></div>
-        <div class="nav-dot" data-index="1"></div>
-        <div class="nav-dot" data-index="2"></div>
-        <div class="nav-dot" data-index="3"></div>
+    <div class="section">
+        <p>从去年4月12日分别的那天起，我每天都在想你。嘉峪关的风沙再大，也吹不散我对你的思念。</p>
+        <p>愿你在新的一年里：</p>
+        <p>🌟 工作顺利，事业蒸蒸日上！</p>
+        <p>💖 身体健康，笑容常伴！</p>
+    </div>
+
+    <div class="section">
+        <p>💰 财源广进，生活美满！</p>
+        <p>🍀 心想事成，万事如意！</p>
+        <p>我知道你在工作中遇到了一些挑战，国企的环境可能让你感到疲惫和无奈。但请记住，你的努力和坚持一定会带来回报。你是一个温柔又坚韧的人，我相信你一定能克服这些困难，找到属于自己的节奏。不要给自己太大压力，慢慢来，我会一直支持你！</p>
+    </div>
+
+    <div class="section">
+        <p>我们还一起度过了那么多美好的时光：在青岛的小麦岛看日落，在日照的海边吃凌晨的火锅，在北京的冬天里依偎取暖。还有那只我们一起照顾的猫咪，现在它胖乎乎的，毛色也比以前更漂亮了，真为你开心！</p>
+        <p>未来的日子里，我希望我们能一起克服距离的阻碍，实现更多美好的梦想。无论是狗猫双全的小屋，还是无忧无虑的生活，我都会陪你一起努力。</p>
+        <p class="heart">❤️ 永远爱你的 辛福朔 ❤️</p>
+    </div>
+
+    <div class="section">
+        <div class="countdown">
+            <p>我们已经分别了 <span id="days"></span> 天。</p>
+        </div>
+        <div class="memories">
+            <p>我们的故事开始于2022年11月，至今已经走过了 <span id="togetherDays"></span> 天。</p>
+        </div>
+        <div class="footer">
+            <p>祝你蛇年快乐，心想事成！</p>
+            <p>🎉 新年快乐 🎉</p>
+        </div>
     </div>
 
     <script>
@@ -214,45 +152,19 @@
         const togetherDays = Math.floor(togetherDiff / (1000 * 60 * 60 * 24));
         document.getElementById('togetherDays').textContent = togetherDays;
 
-        // 内容切换逻辑
-        const contentContainer = document.getElementById('contentContainer');
-        const navDots = document.querySelectorAll('.nav-dot');
-        let currentIndex = 0;
-
-        // 导航点点击事件
-        navDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                updateContent();
-            });
-        });
-
-        // 更新内容显示
-        function updateContent() {
-            contentContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-            navDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-        }
-
-        // 触屏滑动切换
-        let startX = 0;
-        contentContainer.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-
-        contentContainer.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].clientX;
-            const diffX = startX - endX;
-
-            if (diffX > 50 && currentIndex < navDots.length - 1) {
-                currentIndex++;
-            } else if (diffX < -50 && currentIndex > 0) {
-                currentIndex--;
-            }
-
-            updateContent();
-        });
+        // 滚动动画
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+        sections.forEach((section) => observer.observe(section));
     </script>
 </body>
 </html>
